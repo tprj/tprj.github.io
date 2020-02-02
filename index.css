@@ -257,16 +257,23 @@ html {
 
 .worksframe {
   margin-top: 10%;
-  height: 90%;
+  height: 74%;
   width: 100%;
   border: none;
 }
 
-.ad {
-  text-align: center;
+.adsense,#ad {
+  transform: translateY(50%);
+  position: absolute;
+  bottom: 0.5%;
+  width: 25%;
+  height: 5%;
+  right: 1%;
+  margin-left: 74%;
 }
 
-.adsense {
-  margin: 2%;
-  border: solid 1px rgb(0, 0, 0);
+.ad {
+  text-align: center;
+  height: 5%;
+  margin: 1%;
 }
