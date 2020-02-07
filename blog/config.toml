@@ -1,9 +1,0 @@
-baseURL = "https://www.tprj.net/blog/"
-languageCode = "ja-jp"
-title = "TProject"
-author = "Toto31010"
-canonifyurls = true
-paginate = 3
-theme = "aether"
-publishDir = "docs"
-hasCJKLanguage = true
