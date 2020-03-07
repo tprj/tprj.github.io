@@ -68,6 +68,10 @@ html {
   height: 25%;
 }
 
+.works {
+  margin-top: 3%;
+}
+
 .icon {
   transform: scale(1.4);
   -webkit-transform: scale(1.4);
@@ -226,6 +230,7 @@ html {
 
 .workcontent {
   height: 50%;
+  overflow: scroll;
 }
 
 .workitem {
