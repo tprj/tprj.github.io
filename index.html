@@ -40,7 +40,8 @@
 </head>
 
 <body id="body">
-  <div class="content">
+  <div id="particle"></div>
+  <div class="content" id="bg">
     <div class="logoout">
       <div class="logo">
         <h1 id="title">TProject</h1>
@@ -49,23 +50,13 @@
     <div class="description">
       <p id="description"></p>
     </div>
-    <div class="socialout">
-      <div class="social">
-        <div id="tw" onclick="clickSocial(0)" class="icon">
-          <div class="tw">
-            <i class="fab fa-twitter"></i>
-          </div>
-        </div>
-        &emsp;&emsp;
-        <div id="ig" onclick="clickSocial(1)" class="icon">
-          <i class="fab fa-instagram"></i>
-        </div>
-        &emsp;&emsp;
-        <div id="discord" onclick="clickSocial(2)" class="icon">
-          <span class="dis">
-            <i class="fab fa-discord"></i>
-        </div>
+    <div id="social" class="socialout">
+      <div class="social-content">
+        <div id="tw" class="social-icon social-tw" onclick="clickSocial(0)"></div>
+        <div id="ig" class="social-icon social-in" onclick="clickSocial(1)"></div>
+        <div id="discord" class="social-icon social-di" onclick="clickSocial(2)"></div>
       </div>
+      <span id="social-text" class="social-text">Follow me!</span>
     </div>
     <div id="menu" class="menu">
       <div id="menubars" onclick="clickmenu()" class="menu-close">
@@ -128,7 +119,7 @@
         })
       })
       anime({
-        targets: '.social',
+        targets: '.socialout',
         opacity: [0, 1],
         duration: 1000,
         delay: anime.stagger(1000, {
@@ -160,17 +151,16 @@
     var icon1 = document.getElementById("tw");
     var icon2 = document.getElementById("ig");
     var icon3 = document.getElementById("discord");
+    var text = document.getElementById("social-text");
 
     function clickSocial(type) {
       menu.style.opacity = 0;
       if (type == 0) {
         icon2.style.opacity = 0;
         icon3.style.opacity = 0;
-        title.style.opacity = 0;
-        icon1.style.color = '#1DA1F2';
         anime({
           targets: icon1,
-          scale: [3.9, 8],
+          scale: [1, 1.3],
           duration: 200
         })
         window.setTimeout(sendTw, 0);
@@ -178,29 +168,33 @@
       if (type == 1) {
         icon1.style.opacity = 0;
         icon3.style.opacity = 0;
-        title.style.opacity = 0;
         anime({
           targets: icon2,
-          scale: [3.9, 8],
+          scale: [1, 1.3],
           duration: 200
         })
         window.setTimeout(sendIg, 0);
+        
       }
       if (type == 2) {
         icon1.style.opacity = 0;
         icon2.style.opacity = 0;
-        title.style.opacity = 0;
         anime({
           targets: icon3,
-          scale: [3.9, 8],
+          scale: [1, 1.3],
           duration: 200
         })
         window.setTimeout(sendDiscord, 0);
+        icon1.style.opacity = 1;
+        icon2.style.opacity = 1;
       }
+      text.innerText = "Thank you!"
     }
 
     function sendTw() {
       location.href = 'https://twitter.com/Toto31010';
+      icon2.style.opacity = 1;
+      icon3.style.opacity = 1;
     }
 
     function sendIg() {
@@ -229,6 +223,8 @@
       isMenuOpen = !isMenuOpen;
     }
   </script>
+  <script type="text/javascript" src="particles.min.js"></script>
+  <script type="text/javascript" src="particle-settings.js"></script>
 </body>
 
 </html>

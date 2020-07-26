@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 Not Found | TProject</title>
+    <style>
+      #p {
+        animation: anim infinite 5s ease;
+        transition: all 0.5s 0s ease;
+        font-size: larger;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="s" style="text-align: center; display: none;">
+      <span style="font-size: large;">Score: </span><span id="score"></span>
+    </div>
+    <div
+      id="p1"
+      style="
+        position: absolute;
+        transform: translateX(-50%) translateY(-50%);
+        font-size: large;
+        top: 50%;
+        left: 50%;
+        transition: all 0.05s 0s ease;
+      "
+      class="content"
+    >
+      <span id="p">404</span><span id="p2">Not Found</span>
+    </div>
+    <script type="text/javascript">
+      var p = document.getElementById("p1");
+      var x = -50;
+      var y = -50;
+      var isStarted = false;
+      var s = 0;
+      var score = document.getElementById("score");
+      score.innerText = s;
+      document.addEventListener("keypress", (event) => {
+        if (!isStarted) {
+          isStarted = true;
+          document.getElementById("p2").style.display = "none";
+          document.getElementById("s").style.display = "block";
+        }
+        var keyCode = event.keyCode;
+        if (keyCode == 119) {
+          if (y >= -1200) {
+            y -= 10;
+            p.style.transform = "translateX(" + x + "%) translateY(" + y + "%)";
+          }
+        }
+        if (keyCode == 97) {
+          if (x >= -1300) {
+            x -= 10;
+            p.style.transform = "translateX(" + x + "%) translateY(" + y + "%)";
+          }
+        }
+        if (keyCode == 115) {
+          if (y <= 1200) {
+            y += 10;
+            p.style.transform = "translateX(" + x + "%) translateY(" + y + "%)";
+          }
+        }
+        if (keyCode == 100) {
+          if (x <= 1300) {
+            x += 10;
+            p.style.transform = "translateX(" + x + "%) translateY(" + y + "%)";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
