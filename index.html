@@ -39,7 +39,10 @@
   </script>
 </head>
 
-<body id="body">
+<body id="body" onclick="clickBackground()">
+  <div class="counter" id="counter">
+
+  </div>
   <div id="particle" style="position: absolute;"></div>
   <div class="content" id="bg">
     <div class="logoout">
@@ -98,6 +101,13 @@
           <!-- AddToAny END -->
           <p>(c)TProject</p>
         </div>
+      </div>
+    </div>
+    <div class="foot" style="display: none;">
+      <div class="foot-content">
+        <div class="foot-item-off"></div>
+        <div class="foot-item-off"></div>
+        <div class="foot-item-off"></div>
       </div>
     </div>
   </div>
@@ -221,6 +231,15 @@
         document.getElementById('bar3').className = "bar3-off";
       }
       isMenuOpen = !isMenuOpen;
+    }
+
+    var count = 0;
+
+    var countElement = document.getElementById('counter');
+    function clickBackground() {
+      count++;
+      countElement.style.display = "block";
+      countElement.innerHTML = count + " CLICKS!";
     }
   </script>
   <script type="text/javascript" src="particles.min.js"></script>
