@@ -43,6 +43,8 @@
   <div class="counter" id="counter">
 
   </div>
+  <div class="countertext" id="countertext">
+  </div>
   <div id="particle" style="position: absolute;"></div>
   <div class="content" id="bg">
     <div class="logoout">
@@ -236,10 +238,34 @@
     var count = 0;
 
     var countElement = document.getElementById('counter');
+    var countertext = document.getElementById('countertext');
+    var countTxt = "";
     function clickBackground() {
       count++;
       countElement.style.display = "block";
       countElement.innerHTML = count + " CLICKS!";
+      if (count >= 1500) {
+        countTxt = "Excellent!!! 1500 Clicks!!"
+      } else if (count >= 1000) {
+        countTxt = "KILO CLICKS!"
+      } else if (count >= 750) {
+        countTxt = "More!!!";
+      } else if (count >= 500) {
+        countTxt = "More?";
+      } else if (count >= 400) {
+        countTxt = "Great!!!";
+      } else if (count >= 300) {
+        countTxt = "Great!!";
+      } else if (count >= 200) {
+        countTxt = "Good!!";
+      } else if (count >= 100) {
+        countTxt = "Nice!!";
+      } else if (count >= 50) {
+        countTxt = "Nice!";
+      } else if (count >= 20) {
+        countTxt = "Clicks!!";
+      }
+      countertext.innerHTML = countTxt;
     }
   </script>
   <script type="text/javascript" src="particles.min.js"></script>

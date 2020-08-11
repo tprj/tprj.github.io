@@ -409,6 +409,13 @@ html {
   font-family: "gochikakutto", sans-serif;
 }
 
+.countertext {
+  position: fixed;
+  top: 70px;
+  right: 100px;
+  font-family: "gochikakutto", sans-serif;
+}
+
 @media screen and (max-width: 1000px) {
   .foot {
     display: none;
