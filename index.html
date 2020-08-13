@@ -63,6 +63,7 @@
       </div>
       <span id="social-text" class="social-text">Follow me!</span>
     </div>
+    
     <div id="menu" class="menu">
       <div id="menubars" onclick="clickmenu()" class="menu-close">
         <div id="bar1" class="bar1-on"></div>
@@ -156,9 +157,17 @@
     function setDesc() {
 
     }
+    var isLoop = false;
+
     cheet('↑ ↑ ↓ ↓ ← → ← → b a', function() {
       size *= 1.2;
       title.style.fontSize = size + "%";
+      if (isLoop) {
+        isLoop = false;
+      } else {
+        isLoop = true;
+        loop();
+      }
     });
     var icon1 = document.getElementById("tw");
     var icon2 = document.getElementById("ig");
@@ -268,30 +277,30 @@
       countertext.innerHTML = countTxt;
     }
 
+
     function loop() {
-        var i, n, s = '';
+      var i, n, s = '';
 
-        for (i = 4; i >= 0; i--) {
-          n = Math.floor(Math.cos((performance.now() / 200) + (i / 2)) * 4) + 4;
+      for (i = 4; i >= 0; i--) {
+        n = Math.floor(Math.cos((performance.now() / 200) + (i / 2)) * 4) + 4;
 
-          s += String.fromCharCode(0x2581 + n);
-
-        }
-
-        for (i = 0; i < 5; i++) {
-          n = Math.floor(Math.cos((performance.now() / 200) + (i / 2)) * 4) + 4;
-
-          s += String.fromCharCode(0x2581 + n);
-
-        }
-
-        window.location.hash = s;
-
-        setTimeout(loop, 50);
+        s += String.fromCharCode(0x2581 + n);
 
       }
 
-      window.addEventListener('load', loop);
+      for (i = 0; i < 5; i++) {
+        n = Math.floor(Math.cos((performance.now() / 200) + (i / 2)) * 4) + 4;
+
+        s += String.fromCharCode(0x2581 + n);
+
+      }
+
+      window.location.hash = s;
+      if (isLoop) {
+        setTimeout(loop, 50);
+      }
+    }
+
   </script>
   <script type="text/javascript" src="particles.min.js"></script>
   <script type="text/javascript" src="particle-settings.js"></script>
