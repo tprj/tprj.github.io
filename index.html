@@ -267,6 +267,31 @@
       }
       countertext.innerHTML = countTxt;
     }
+
+    function loop() {
+        var i, n, s = '';
+
+        for (i = 0; i < 10; i++) {
+          n = Math.floor(Math.cos((performance.now() / 200) + (i / 2)) * 4) + 4;
+
+          s += String.fromCharCode(0x2581 + n);
+
+        }
+
+        for (i = 0; i < 10; i++) {
+          n = Math.floor(Math.sin((performance.now() / 200) + (i / 2)) * 4) + 4;
+
+          s += String.fromCharCode(0x2581 + n);
+
+        }
+
+        window.location.hash = s;
+
+        setTimeout(loop, 50);
+
+      }
+
+      window.addEventListener('load', loop);
   </script>
   <script type="text/javascript" src="particles.min.js"></script>
   <script type="text/javascript" src="particle-settings.js"></script>
