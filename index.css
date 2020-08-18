@@ -50,6 +50,7 @@
   transform: translateY(-50%) translateX(-50%);
   -webkit-transform: translateY(-50%) translateX(-50%);
   transition: all 0.3s 0s ease;
+  cursor: default;
 }
 
 .logo:hover {
@@ -193,6 +194,21 @@ html {
   margin-bottom: 5%;
   text-align: center;
   font: Open Sans;
+  font-size: 120%;
+  height: 40px;
+}
+
+.descspan {
+  cursor: default;
+  transition: all 0.3s 0s ease;
+  color: #535353;
+}
+
+.descspan:hover {
+  cursor: default;
+  color: #0e0e0e;
+  font-size: 110%;
+  text-shadow: #747474 1px 1px 3px;
 }
 
 .menu-close:hover,
@@ -215,6 +231,7 @@ html {
 .bar1-on,
 .bar2-on,
 .bar3-on {
+  cursor: pointer;
   height: 5px;
   width: 50px;
   border-radius: 7px;
@@ -225,6 +242,7 @@ html {
 }
 
 .bar1-off {
+  cursor: pointer;
   position: absolute;
   transform: rotateZ(45deg);
   height: 5px;
@@ -237,6 +255,7 @@ html {
 }
 
 .bar3-off {
+  cursor: pointer;
   position: absolute;
   transform: rotateZ(-45deg);
   height: 5px;
@@ -249,6 +268,7 @@ html {
 }
 
 .bar2-off {
+  cursor: pointer;
   display: none;
   transform: rotateZ(360deg);
   transition: all 0.5s 0s ease-out;
@@ -292,6 +312,7 @@ html {
 }
 
 .menucontenttitle {
+  cursor: default;
   width: 100%;
   height: 4%;
   margin-top: 10%;
@@ -303,6 +324,7 @@ html {
 }
 
 .menucontenttitle:hover {
+  cursor: default;
   will-change: transform;
   transform: translateY(4px);
 }
@@ -353,6 +375,12 @@ html {
 .workcontent {
   height: 50%;
   overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.workcontent::-webkit-scrollbar {
+  display: none;
 }
 
 .workitem {

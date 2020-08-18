@@ -102,7 +102,7 @@
           </script>
           <script async src="https://static.addtoany.com/menu/page.js"></script>
           <!-- AddToAny END -->
-          <p>(c)TProject</p>
+          <p style="cursor: default;">(c)TProject</p>
         </div>
       </div>
     </div>
@@ -147,15 +147,20 @@
           start: 2100
         })
       })
-      window.setTimeout(setDesc, 1000);
+      window.setTimeout(setDesc, 2000);
     }
 
     function joindiscord() {
       location.href = discordURL;
     }
 
+    var dL = 0
     function setDesc() {
-
+      Array.from("Spigot plugin development").forEach((text, count) => {
+        setTimeout(() => {
+          document.querySelector("#description").innerHTML += "<span class='descspan'>" + text + "</span>";
+        }, 100 * ++count);
+      });
     }
     var isLoop = false;
 
