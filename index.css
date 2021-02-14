@@ -96,8 +96,8 @@ html {
   height: 40px;
   margin-top: 5px;
   overflow: hidden;
-  box-shadow: rgb(187, 187, 187) 0px 0px 5px;
-  background-color: rgb(252, 252, 252);
+  /*box-shadow: rgb(187, 187, 187) 0px 0px 5px;*/
+  background-color: rgb(253, 253, 253);
 }
 
 .social-text {
@@ -126,8 +126,8 @@ html {
 .social-icon {
   width: 40px;
   height: 40px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 35px;
+  margin-right: 35px;
   float: left;
   transition: all 0.2s 0s ease;
   cursor: pointer;
